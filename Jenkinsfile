@@ -20,5 +20,12 @@ stage(install){
 					}
 					
 			}
+			post {
+			stage('Email') {
+    steps {
+        step([$class: 'Mailer', notifyEveryUnstableBuild: false, recipients: 'vinaykumarshetkar@gmail.com', sendToIndividuals: false])
+    }
+}
+}
 		}
 	}
