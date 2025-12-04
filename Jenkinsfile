@@ -9,23 +9,24 @@ pipeline{
 					sh 'mvn clean'
 					}
 			}
-stage(install){
+					stage(install){
 				steps{
 					sh 'mvn  install'
 					}
 			}
-			stage(test){
+					stage(test){
 				steps{
 					sh 'mvn test'
 					}
 					
 			}
-			post {
-			stage('Email') {
-    steps {
-        step([$class: 'Mailer', notifyEveryUnstableBuild: false, recipients: 'vinaykumarshetkar@gmail.com', sendToIndividuals: false])
+			 post {
+        always {
+            step([$class: 'Mailer',
+                  notifyEveryUnstableBuild: false,
+                  recipients: 'vinaykumarshetkar@gmail.com',
+                  sendToIndividuals: false])
+        }
     }
-}
-}
 		}
 	}
