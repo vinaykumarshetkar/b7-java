@@ -20,6 +20,7 @@ pipeline{
 					}
 					
 			}
+		}
 			 post {
         always {
             step([$class: 'Mailer',
@@ -29,4 +30,3 @@ pipeline{
         }
     }
 		}
-	}
