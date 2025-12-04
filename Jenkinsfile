@@ -1,6 +1,6 @@
 pipeline{
 		agent {
-  label 'win'
+  label 'task5node'
 }
 
 		stages{
