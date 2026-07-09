@@ -40,3 +40,6 @@ crash.log
 
 # Optional
 .terraform.lock.hcl
+
+target/surefire-reports/TEST-com.mycompany.app.AppTest.xml
+target/*
