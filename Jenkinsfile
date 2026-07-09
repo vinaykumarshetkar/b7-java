@@ -24,13 +24,14 @@ pipeline{
 					sh 'docker run b7-java-image'
 				}
 				}
-			post {
+
+		}
+				post {
 			always {
 				archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
 					
 					junit 'target/surefire-reports/*.xml'
 				}
 			}
-		}
 		}
 	
