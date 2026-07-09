@@ -1,7 +1,5 @@
 pipeline{
-		agent {
-  label 'slavelin'
-}
+		agent any
 
 		stages{
 		   			stage(clean){
