@@ -4,7 +4,7 @@ pipeline{
 		stages{
 		   			stage(clean){
 				steps{
-					sh 'mvn clean'
+					sh 'mvn clean -q'
 					}
 			}
 stage(install){
@@ -14,7 +14,7 @@ stage(install){
 			}
 			stage(test){
 				steps{
-					sh 'mvn test'
+					sh 'mvn test -q'
 					}
 					
 					post {
