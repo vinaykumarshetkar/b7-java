@@ -23,11 +23,11 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                dir('target') {
+
                     sh 'docker rm -f b7-java-image || true'
                     sh 'docker build -t b7-java-image .'
                     sh 'docker run --name b7-java-image b7-java-image'
-                }
+
             }
         }
     }
