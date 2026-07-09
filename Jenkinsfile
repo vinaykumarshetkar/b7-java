@@ -18,8 +18,8 @@ pipeline{
 			}					
 			stage(deploy){
 				steps{
-					dir('target')
-					sh 'docker rmi b7-java-image'
+					dir('target'){
+					sh 'docker rm -f b7-java-image'
 					sh 'docker build -t b7-java-image .'
 					sh 'docker run b7-java-image'
 				}
